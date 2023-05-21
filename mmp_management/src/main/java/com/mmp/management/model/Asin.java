@@ -12,13 +12,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "print_request")
-public class PrintRequest {
+@Table(name = "asin")
+public class Asin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long requestId;
-    @Column(name = "tracking_number")
-    private String trackingNumber;
-    @Column(name = "created_by")
-    private Long createdBy;
+    private Long id;
+    @Column(name = "code")
+    private String code;
+    @Column(name = "title")
+    private String title;
 }

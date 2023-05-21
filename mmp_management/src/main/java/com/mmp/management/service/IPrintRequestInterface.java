@@ -1,6 +1,6 @@
 package com.mmp.management.service;
 
-import com.mmp.management.model.PrintRequest;
+import com.mmp.management.model.Asin;
 
-public interface IPrintRequestInterface extends IGeneralService<PrintRequest>{
+public interface IPrintRequestInterface extends IGeneralService<Asin>{
 }
