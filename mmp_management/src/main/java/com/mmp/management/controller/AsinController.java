@@ -18,12 +18,12 @@ public class AsinController {
     private AsinService asinService;
 
     @GetMapping
-    public List<Asin> getAllPrintRequest() {
+    public List<Asin> getAllAsin() {
         return asinService.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Asin> getPrintRequestById(@PathVariable(value = "id") long id) {
+    public ResponseEntity<Asin> getAsinById(@PathVariable(value = "id") long id) {
         return null;
     }
 }

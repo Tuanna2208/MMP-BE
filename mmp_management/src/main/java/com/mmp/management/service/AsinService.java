@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class AsinService implements IPrintRequestInterface{
+public class AsinService implements IAsinInterface {
     @Autowired
     AsinRepository asinRepository;
     @Override
