@@ -1,14 +1,17 @@
-package com.mmp.management.service;
+package com.mmp.management.service.impl;
 
+import com.mmp.management.common.exception.ResourceNotFound;
 import com.mmp.management.model.Asin;
 import com.mmp.management.repository.AsinRepository;
+import com.mmp.management.service.IAsinInterface;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
+@Slf4j
 public class AsinService implements IAsinInterface {
     @Autowired
     AsinRepository asinRepository;
@@ -17,8 +20,8 @@ public class AsinService implements IAsinInterface {
         return asinRepository.save(emp);
     }
     @Override
-    public Optional<Asin> findById(Long id) {
-        return asinRepository.findById(id);
+    public Asin findById(Long id) {
+        return asinRepository.findById(id).orElseThrow(() -> new ResourceNotFound("Not found Asin ID"));
     }
     @Override
     public List<Asin> findAll() {
